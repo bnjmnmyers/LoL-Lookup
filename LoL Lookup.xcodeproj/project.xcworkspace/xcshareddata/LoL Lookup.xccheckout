@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>1BD792FD-3FCF-4589-9993-DBBECB77F758</string>
+	<key>IDESourceControlProjectName</key>
+	<string>LoL Lookup</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>FC6D3079-7FB1-446A-878B-BF658DD2548C</key>
+		<string>https://github.com/bnjmnmyers/LoL-LookUp.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>LoL Lookup/LoL Lookup.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>FC6D3079-7FB1-446A-878B-BF658DD2548C</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/bnjmnmyers/LoL-LookUp.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>FC6D3079-7FB1-446A-878B-BF658DD2548C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>FC6D3079-7FB1-446A-878B-BF658DD2548C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>LoL-LookUp</string>
+		</dict>
+	</array>
+</dict>
+</plist>

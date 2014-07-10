@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13E28" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="CurrentSummoner" syncable="YES">
+        <attribute name="summonerID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="summonerLevel" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="summonerName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="recentGame" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RecentGame" syncable="YES"/>
+    </entity>
+    <entity name="FavoriteSummoner" syncable="YES">
+        <attribute name="summonerID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="summonerLevel" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="summonerName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="RecentGame" syncable="YES">
+        <attribute name="championID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="gameID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="gameType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="numberOfChampionKills" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="numberOfDeaths" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="numberOfMinionKills" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="wardsPlaced" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="win" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="summoner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CurrentSummoner" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="FavoriteSummoner" positionX="-18" positionY="-387" width="128" height="90"/>
+        <element name="CurrentSummoner" positionX="-369" positionY="-387" width="128" height="103"/>
+        <element name="RecentGame" positionX="-180" positionY="36" width="128" height="178"/>
+    </elements>
+</model>

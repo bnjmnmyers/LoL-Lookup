@@ -1,0 +1,538 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B5ACD1FA196EFE9000AA1774 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5ACD1F9196EFE9000AA1774 /* Foundation.framework */; };
+		B5ACD1FC196EFE9000AA1774 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5ACD1FB196EFE9000AA1774 /* CoreGraphics.framework */; };
+		B5ACD1FE196EFE9000AA1774 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5ACD1FD196EFE9000AA1774 /* UIKit.framework */; };
+		B5ACD200196EFE9000AA1774 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5ACD1FF196EFE9000AA1774 /* CoreData.framework */; };
+		B5ACD206196EFE9000AA1774 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B5ACD204196EFE9000AA1774 /* InfoPlist.strings */; };
+		B5ACD208196EFE9000AA1774 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B5ACD207196EFE9000AA1774 /* main.m */; };
+		B5ACD20C196EFE9000AA1774 /* LOLLUAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5ACD20B196EFE9000AA1774 /* LOLLUAppDelegate.m */; };
+		B5ACD20F196EFE9000AA1774 /* LoL_Lookup.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B5ACD20D196EFE9000AA1774 /* LoL_Lookup.xcdatamodeld */; };
+		B5ACD211196EFE9000AA1774 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5ACD210196EFE9000AA1774 /* Images.xcassets */; };
+		B5ACD218196EFE9000AA1774 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5ACD217196EFE9000AA1774 /* XCTest.framework */; };
+		B5ACD219196EFE9000AA1774 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5ACD1F9196EFE9000AA1774 /* Foundation.framework */; };
+		B5ACD21A196EFE9000AA1774 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5ACD1FD196EFE9000AA1774 /* UIKit.framework */; };
+		B5ACD21B196EFE9000AA1774 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5ACD1FF196EFE9000AA1774 /* CoreData.framework */; };
+		B5ACD223196EFE9000AA1774 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B5ACD221196EFE9000AA1774 /* InfoPlist.strings */; };
+		B5ACD225196EFE9000AA1774 /* LoL_LookupTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5ACD224196EFE9000AA1774 /* LoL_LookupTests.m */; };
+		B5ACD232196EFEB900AA1774 /* Main-iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5ACD231196EFEB900AA1774 /* Main-iPhone.storyboard */; };
+		B5ACD235196EFF8300AA1774 /* LOLLU_MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5ACD234196EFF8300AA1774 /* LOLLU_MainViewController.m */; };
+		B5ACD238196EFFC400AA1774 /* LOLLU_DataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B5ACD237196EFFC400AA1774 /* LOLLU_DataHandler.m */; };
+		B5ACD23B196F016900AA1774 /* CoreDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B5ACD23A196F016900AA1774 /* CoreDataHandler.m */; };
+		B5ACD23F196F01A000AA1774 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = B5ACD23E196F01A000AA1774 /* Reachability.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B5ACD21C196EFE9000AA1774 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5ACD1EE196EFE9000AA1774 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B5ACD1F5196EFE9000AA1774;
+			remoteInfo = "LoL Lookup";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B5ACD1F6196EFE9000AA1774 /* LoL Lookup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LoL Lookup.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5ACD1F9196EFE9000AA1774 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B5ACD1FB196EFE9000AA1774 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B5ACD1FD196EFE9000AA1774 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B5ACD1FF196EFE9000AA1774 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		B5ACD203196EFE9000AA1774 /* LoL Lookup-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LoL Lookup-Info.plist"; sourceTree = "<group>"; };
+		B5ACD205196EFE9000AA1774 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B5ACD207196EFE9000AA1774 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B5ACD209196EFE9000AA1774 /* LoL Lookup-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LoL Lookup-Prefix.pch"; sourceTree = "<group>"; };
+		B5ACD20A196EFE9000AA1774 /* LOLLUAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LOLLUAppDelegate.h; sourceTree = "<group>"; };
+		B5ACD20B196EFE9000AA1774 /* LOLLUAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LOLLUAppDelegate.m; sourceTree = "<group>"; };
+		B5ACD20E196EFE9000AA1774 /* LoL_Lookup.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LoL_Lookup.xcdatamodel; sourceTree = "<group>"; };
+		B5ACD210196EFE9000AA1774 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B5ACD216196EFE9000AA1774 /* LoL LookupTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LoL LookupTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5ACD217196EFE9000AA1774 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		B5ACD220196EFE9000AA1774 /* LoL LookupTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LoL LookupTests-Info.plist"; sourceTree = "<group>"; };
+		B5ACD222196EFE9000AA1774 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B5ACD224196EFE9000AA1774 /* LoL_LookupTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoL_LookupTests.m; sourceTree = "<group>"; };
+		B5ACD231196EFEB900AA1774 /* Main-iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Main-iPhone.storyboard"; sourceTree = "<group>"; };
+		B5ACD233196EFF8300AA1774 /* LOLLU_MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOLLU_MainViewController.h; sourceTree = "<group>"; };
+		B5ACD234196EFF8300AA1774 /* LOLLU_MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOLLU_MainViewController.m; sourceTree = "<group>"; };
+		B5ACD236196EFFC400AA1774 /* LOLLU_DataHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOLLU_DataHandler.h; sourceTree = "<group>"; };
+		B5ACD237196EFFC400AA1774 /* LOLLU_DataHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOLLU_DataHandler.m; sourceTree = "<group>"; };
+		B5ACD239196F016900AA1774 /* CoreDataHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHandler.h; sourceTree = "<group>"; };
+		B5ACD23A196F016900AA1774 /* CoreDataHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHandler.m; sourceTree = "<group>"; };
+		B5ACD23D196F01A000AA1774 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		B5ACD23E196F01A000AA1774 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B5ACD1F3196EFE9000AA1774 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5ACD1FC196EFE9000AA1774 /* CoreGraphics.framework in Frameworks */,
+				B5ACD200196EFE9000AA1774 /* CoreData.framework in Frameworks */,
+				B5ACD1FE196EFE9000AA1774 /* UIKit.framework in Frameworks */,
+				B5ACD1FA196EFE9000AA1774 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5ACD213196EFE9000AA1774 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5ACD218196EFE9000AA1774 /* XCTest.framework in Frameworks */,
+				B5ACD21B196EFE9000AA1774 /* CoreData.framework in Frameworks */,
+				B5ACD21A196EFE9000AA1774 /* UIKit.framework in Frameworks */,
+				B5ACD219196EFE9000AA1774 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B5ACD1ED196EFE9000AA1774 = {
+			isa = PBXGroup;
+			children = (
+				B5ACD201196EFE9000AA1774 /* LoL Lookup */,
+				B5ACD21E196EFE9000AA1774 /* LoL LookupTests */,
+				B5ACD1F8196EFE9000AA1774 /* Frameworks */,
+				B5ACD1F7196EFE9000AA1774 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B5ACD1F7196EFE9000AA1774 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B5ACD1F6196EFE9000AA1774 /* LoL Lookup.app */,
+				B5ACD216196EFE9000AA1774 /* LoL LookupTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B5ACD1F8196EFE9000AA1774 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B5ACD1F9196EFE9000AA1774 /* Foundation.framework */,
+				B5ACD1FB196EFE9000AA1774 /* CoreGraphics.framework */,
+				B5ACD1FD196EFE9000AA1774 /* UIKit.framework */,
+				B5ACD1FF196EFE9000AA1774 /* CoreData.framework */,
+				B5ACD217196EFE9000AA1774 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B5ACD201196EFE9000AA1774 /* LoL Lookup */ = {
+			isa = PBXGroup;
+			children = (
+				B5ACD231196EFEB900AA1774 /* Main-iPhone.storyboard */,
+				B5ACD20D196EFE9000AA1774 /* LoL_Lookup.xcdatamodeld */,
+				B5ACD22E196EFE9700AA1774 /* Controllers */,
+				B5ACD22F196EFE9E00AA1774 /* Data */,
+				B5ACD230196EFEA200AA1774 /* Models */,
+				B5ACD23C196F019100AA1774 /* Utilities */,
+				B5ACD20A196EFE9000AA1774 /* LOLLUAppDelegate.h */,
+				B5ACD20B196EFE9000AA1774 /* LOLLUAppDelegate.m */,
+				B5ACD210196EFE9000AA1774 /* Images.xcassets */,
+				B5ACD202196EFE9000AA1774 /* Supporting Files */,
+			);
+			path = "LoL Lookup";
+			sourceTree = "<group>";
+		};
+		B5ACD202196EFE9000AA1774 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B5ACD203196EFE9000AA1774 /* LoL Lookup-Info.plist */,
+				B5ACD204196EFE9000AA1774 /* InfoPlist.strings */,
+				B5ACD207196EFE9000AA1774 /* main.m */,
+				B5ACD209196EFE9000AA1774 /* LoL Lookup-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B5ACD21E196EFE9000AA1774 /* LoL LookupTests */ = {
+			isa = PBXGroup;
+			children = (
+				B5ACD224196EFE9000AA1774 /* LoL_LookupTests.m */,
+				B5ACD21F196EFE9000AA1774 /* Supporting Files */,
+			);
+			path = "LoL LookupTests";
+			sourceTree = "<group>";
+		};
+		B5ACD21F196EFE9000AA1774 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B5ACD220196EFE9000AA1774 /* LoL LookupTests-Info.plist */,
+				B5ACD221196EFE9000AA1774 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B5ACD22E196EFE9700AA1774 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B5ACD233196EFF8300AA1774 /* LOLLU_MainViewController.h */,
+				B5ACD234196EFF8300AA1774 /* LOLLU_MainViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		B5ACD22F196EFE9E00AA1774 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				B5ACD239196F016900AA1774 /* CoreDataHandler.h */,
+				B5ACD23A196F016900AA1774 /* CoreDataHandler.m */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		B5ACD230196EFEA200AA1774 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B5ACD236196EFFC400AA1774 /* LOLLU_DataHandler.h */,
+				B5ACD237196EFFC400AA1774 /* LOLLU_DataHandler.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		B5ACD23C196F019100AA1774 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B5ACD23D196F01A000AA1774 /* Reachability.h */,
+				B5ACD23E196F01A000AA1774 /* Reachability.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B5ACD1F5196EFE9000AA1774 /* LoL Lookup */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5ACD228196EFE9000AA1774 /* Build configuration list for PBXNativeTarget "LoL Lookup" */;
+			buildPhases = (
+				B5ACD1F2196EFE9000AA1774 /* Sources */,
+				B5ACD1F3196EFE9000AA1774 /* Frameworks */,
+				B5ACD1F4196EFE9000AA1774 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "LoL Lookup";
+			productName = "LoL Lookup";
+			productReference = B5ACD1F6196EFE9000AA1774 /* LoL Lookup.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B5ACD215196EFE9000AA1774 /* LoL LookupTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5ACD22B196EFE9000AA1774 /* Build configuration list for PBXNativeTarget "LoL LookupTests" */;
+			buildPhases = (
+				B5ACD212196EFE9000AA1774 /* Sources */,
+				B5ACD213196EFE9000AA1774 /* Frameworks */,
+				B5ACD214196EFE9000AA1774 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B5ACD21D196EFE9000AA1774 /* PBXTargetDependency */,
+			);
+			name = "LoL LookupTests";
+			productName = "LoL LookupTests";
+			productReference = B5ACD216196EFE9000AA1774 /* LoL LookupTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B5ACD1EE196EFE9000AA1774 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = LOLLU;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = appguys.biz;
+				TargetAttributes = {
+					B5ACD215196EFE9000AA1774 = {
+						TestTargetID = B5ACD1F5196EFE9000AA1774;
+					};
+				};
+			};
+			buildConfigurationList = B5ACD1F1196EFE9000AA1774 /* Build configuration list for PBXProject "LoL Lookup" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B5ACD1ED196EFE9000AA1774;
+			productRefGroup = B5ACD1F7196EFE9000AA1774 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B5ACD1F5196EFE9000AA1774 /* LoL Lookup */,
+				B5ACD215196EFE9000AA1774 /* LoL LookupTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B5ACD1F4196EFE9000AA1774 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5ACD206196EFE9000AA1774 /* InfoPlist.strings in Resources */,
+				B5ACD232196EFEB900AA1774 /* Main-iPhone.storyboard in Resources */,
+				B5ACD211196EFE9000AA1774 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5ACD214196EFE9000AA1774 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5ACD223196EFE9000AA1774 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B5ACD1F2196EFE9000AA1774 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5ACD235196EFF8300AA1774 /* LOLLU_MainViewController.m in Sources */,
+				B5ACD23B196F016900AA1774 /* CoreDataHandler.m in Sources */,
+				B5ACD208196EFE9000AA1774 /* main.m in Sources */,
+				B5ACD23F196F01A000AA1774 /* Reachability.m in Sources */,
+				B5ACD20F196EFE9000AA1774 /* LoL_Lookup.xcdatamodeld in Sources */,
+				B5ACD20C196EFE9000AA1774 /* LOLLUAppDelegate.m in Sources */,
+				B5ACD238196EFFC400AA1774 /* LOLLU_DataHandler.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5ACD212196EFE9000AA1774 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5ACD225196EFE9000AA1774 /* LoL_LookupTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B5ACD21D196EFE9000AA1774 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B5ACD1F5196EFE9000AA1774 /* LoL Lookup */;
+			targetProxy = B5ACD21C196EFE9000AA1774 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B5ACD204196EFE9000AA1774 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5ACD205196EFE9000AA1774 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		B5ACD221196EFE9000AA1774 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5ACD222196EFE9000AA1774 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B5ACD226196EFE9000AA1774 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B5ACD227196EFE9000AA1774 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B5ACD229196EFE9000AA1774 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LoL Lookup/LoL Lookup-Prefix.pch";
+				INFOPLIST_FILE = "LoL Lookup/LoL Lookup-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		B5ACD22A196EFE9000AA1774 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LoL Lookup/LoL Lookup-Prefix.pch";
+				INFOPLIST_FILE = "LoL Lookup/LoL Lookup-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		B5ACD22C196EFE9000AA1774 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LoL Lookup.app/LoL Lookup";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LoL Lookup/LoL Lookup-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "LoL LookupTests/LoL LookupTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		B5ACD22D196EFE9000AA1774 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LoL Lookup.app/LoL Lookup";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LoL Lookup/LoL Lookup-Prefix.pch";
+				INFOPLIST_FILE = "LoL LookupTests/LoL LookupTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B5ACD1F1196EFE9000AA1774 /* Build configuration list for PBXProject "LoL Lookup" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5ACD226196EFE9000AA1774 /* Debug */,
+				B5ACD227196EFE9000AA1774 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5ACD228196EFE9000AA1774 /* Build configuration list for PBXNativeTarget "LoL Lookup" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5ACD229196EFE9000AA1774 /* Debug */,
+				B5ACD22A196EFE9000AA1774 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B5ACD22B196EFE9000AA1774 /* Build configuration list for PBXNativeTarget "LoL LookupTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5ACD22C196EFE9000AA1774 /* Debug */,
+				B5ACD22D196EFE9000AA1774 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B5ACD20D196EFE9000AA1774 /* LoL_Lookup.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B5ACD20E196EFE9000AA1774 /* LoL_Lookup.xcdatamodel */,
+			);
+			currentVersion = B5ACD20E196EFE9000AA1774 /* LoL_Lookup.xcdatamodel */;
+			path = LoL_Lookup.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = B5ACD1EE196EFE9000AA1774 /* Project object */;
+}
