@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5265E1E9196F3BDC0088247D /* LOLLU_SummonerDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5265E1E8196F3BDC0088247D /* LOLLU_SummonerDetailsViewController.m */; };
 		B5ACD1FA196EFE9000AA1774 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5ACD1F9196EFE9000AA1774 /* Foundation.framework */; };
 		B5ACD1FC196EFE9000AA1774 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5ACD1FB196EFE9000AA1774 /* CoreGraphics.framework */; };
 		B5ACD1FE196EFE9000AA1774 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5ACD1FD196EFE9000AA1774 /* UIKit.framework */; };
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5265E1E7196F3BDC0088247D /* LOLLU_SummonerDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOLLU_SummonerDetailsViewController.h; sourceTree = "<group>"; };
+		5265E1E8196F3BDC0088247D /* LOLLU_SummonerDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOLLU_SummonerDetailsViewController.m; sourceTree = "<group>"; };
 		B5ACD1F6196EFE9000AA1774 /* LoL Lookup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LoL Lookup.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5ACD1F9196EFE9000AA1774 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B5ACD1FB196EFE9000AA1774 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -177,6 +180,8 @@
 			children = (
 				B5ACD233196EFF8300AA1774 /* LOLLU_MainViewController.h */,
 				B5ACD234196EFF8300AA1774 /* LOLLU_MainViewController.m */,
+				5265E1E7196F3BDC0088247D /* LOLLU_SummonerDetailsViewController.h */,
+				5265E1E8196F3BDC0088247D /* LOLLU_SummonerDetailsViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -307,6 +312,7 @@
 			files = (
 				B5ACD235196EFF8300AA1774 /* LOLLU_MainViewController.m in Sources */,
 				B5ACD23B196F016900AA1774 /* CoreDataHandler.m in Sources */,
+				5265E1E9196F3BDC0088247D /* LOLLU_SummonerDetailsViewController.m in Sources */,
 				B5ACD208196EFE9000AA1774 /* main.m in Sources */,
 				B5ACD23F196F01A000AA1774 /* Reachability.m in Sources */,
 				B5ACD20F196EFE9000AA1774 /* LoL_Lookup.xcdatamodeld in Sources */,
@@ -510,6 +516,7 @@
 				B5ACD22A196EFE9000AA1774 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B5ACD22B196EFE9000AA1774 /* Build configuration list for PBXNativeTarget "LoL LookupTests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +525,7 @@
 				B5ACD22D196EFE9000AA1774 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -39,8 +39,9 @@
 	Reachability *internetReachable;
 }
 
-- (void)getSummonerInfoByRegion:(NSString *)region summonerName:(NSString *)summonerName
+- (void)getSummonerInfoByRegion:(NSString *)region andSummonerName:(NSString *)summonerName
 {
+    NSLog(@"BOOM");
 	id delegate = [[UIApplication sharedApplication]delegate];
 	self.managedObjectContext = [delegate managedObjectContext];
 	
@@ -54,18 +55,37 @@
 	
 	// Use Main thread to download inventory data
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError)
-	 {
+    {
 		 if (data.length > 0 && connectionError == nil)
 		 {
 			 NSDictionary *summonerInfo = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
 			 NSLog(@"%@", summonerInfo);
 		 }
-	 }];
+    }];
 }
 
-- (void)getRecentGamesByRegion:(NSString *)region summonerID:(int)summonerID
+- (void)getRecentGamesByRegion:(NSString *)region andSummonerID:(int)summonerID
 {
+	id delegate = [[UIApplication sharedApplication]delegate];
+	self.managedObjectContext = [delegate managedObjectContext];
 	
+	coreDataHandler = [[CoreDataHandler alloc] init];
+	
+	NSString *urlString = [NSString stringWithFormat:@"%@%@%@%d/recent?%@", BASE_URL, region, RECENT_GAMES, summonerID, API_KEY];
+	NSLog(@"URL STRING: %@", urlString);
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [request setHTTPMethod:@"GET"];
+	
+	// Use Main thread to download inventory data
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError)
+     {
+		 if (data.length > 0 && connectionError == nil)
+		 {
+			 NSDictionary *recentGames = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
+			 NSLog(@"%@", recentGames);
+		 }
+     }];
 }
 
 @end

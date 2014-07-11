@@ -82,16 +82,17 @@
                         <outlet property="regionPicker" destination="CKk-Ly-D3m" id="FDh-3H-uxY"/>
                         <outlet property="regionPickerCont" destination="nX8-oN-BW3" id="ocQ-Wj-7rO"/>
                         <outlet property="tfSummonerName" destination="f41-pj-4Q5" id="jPj-P5-dye"/>
+                        <segue destination="OIF-Fr-C8A" kind="modal" identifier="segueToSummonerDetails" id="SDa-lg-XVn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ujc-IW-RoO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="155" y="106"/>
         </scene>
-        <!--View Controller-->
+        <!--Summoner Details View Controller-->
         <scene sceneID="n1b-mH-0Ew">
             <objects>
-                <viewController id="OIF-Fr-C8A" sceneMemberID="viewController">
+                <viewController id="OIF-Fr-C8A" customClass="LOLLU_SummonerDetailsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LWa-MO-1wd"/>
                         <viewControllerLayoutGuide type="bottom" id="Oqe-ua-o7U"/>

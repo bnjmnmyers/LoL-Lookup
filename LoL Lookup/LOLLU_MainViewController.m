@@ -46,7 +46,7 @@
 	_regionPicker.delegate = self;
 	_tfSummonerName.delegate = self;
 	
-	UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
+	//UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
 	//[self.view addGestureRecognizer:gestureRecognizer];
 }
 
@@ -126,7 +126,13 @@
 - (IBAction)lookupSummoner:(id)sender
 {
 	if (![_tfSummonerName.text isEqualToString:@""]) {
-		[dataHandler getSummonerInfoByRegion:[_lblRegion.text lowercaseString] summonerName:_tfSummonerName.text];
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
+        ^{
+           [dataHandler getSummonerInfoByRegion:[_lblRegion.text lowercaseString] andSummonerName:_tfSummonerName.text];
+           dispatch_sync(dispatch_get_main_queue(), ^{
+               [self performSegueWithIdentifier:@"segueToSummonerDetails" sender:self];
+           });
+        });
 	} else {
 		_alert = [[UIAlertView alloc]initWithTitle:@"Invalid Summoner Name" message:@"Please enter a valid summoner name for the selected region." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
 		[_alert show];
