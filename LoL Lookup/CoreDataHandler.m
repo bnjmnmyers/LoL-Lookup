@@ -23,13 +23,15 @@
 	NSError *error = nil;
 	NSArray* result = [[self managedObjectContext] executeFetchRequest:fetchRequest error:&error];
 	
-	for (NSManagedObject *object in result) {
-		[[self managedObjectContext] deleteObject:object];
-	}
-	
-	NSError *saveError = nil;
-	if (![[self managedObjectContext] save:&saveError]) {
-		NSLog(@"An error has occurred: %@", saveError);
+	if ([result count] > 0) {
+		for (NSManagedObject *object in result) {
+			[[self managedObjectContext] deleteObject:object];
+		}
+		
+		NSError *saveError = nil;
+		if (![[self managedObjectContext] save:&saveError]) {
+			NSLog(@"An error has occurred: %@", saveError);
+		}
 	}
 }
 

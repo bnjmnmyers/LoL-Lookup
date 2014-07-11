@@ -77,9 +77,10 @@
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
     _activeField = textField;
+	_regionPickerCont.hidden = TRUE;
 }
 
-- (void) hideKeyboard {
+- (void)hideKeyboard {
 	[_activeField resignFirstResponder];
 }
 
@@ -110,6 +111,7 @@
 - (IBAction)showRegionPicker:(id)sender
 {
 	_regionPickerCont.hidden = FALSE;
+	[_activeField resignFirstResponder];
 }
 
 - (IBAction)selectRegion:(id)sender
@@ -126,11 +128,13 @@
 - (IBAction)lookupSummoner:(id)sender
 {
 	if (![_tfSummonerName.text isEqualToString:@""]) {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
-        ^{
-           [dataHandler getSummonerInfoByRegion:[_lblRegion.text lowercaseString] andSummonerName:_tfSummonerName.text];
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^(void){
+			_canSegue = [dataHandler getSummonerInfoByRegion:[_lblRegion.text lowercaseString] andSummonerName:_tfSummonerName.text];
            dispatch_sync(dispatch_get_main_queue(), ^{
-               [self performSegueWithIdentifier:@"segueToSummonerDetails" sender:self];
+			   NSLog(@"MADE NEXT QUEUE");
+			   if (_canSegue) {
+				   [self performSegueWithIdentifier:@"segueToSummonerDetails" sender:self];
+			   }
            });
         });
 	} else {

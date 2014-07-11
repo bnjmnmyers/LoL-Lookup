@@ -28,6 +28,9 @@
 		B5ACD238196EFFC400AA1774 /* LOLLU_DataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B5ACD237196EFFC400AA1774 /* LOLLU_DataHandler.m */; };
 		B5ACD23B196F016900AA1774 /* CoreDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B5ACD23A196F016900AA1774 /* CoreDataHandler.m */; };
 		B5ACD23F196F01A000AA1774 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = B5ACD23E196F01A000AA1774 /* Reachability.m */; };
+		B5BD73DB19705E30001EA89C /* FavoriteSummoner.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BD73DA19705E30001EA89C /* FavoriteSummoner.m */; };
+		B5BD73DE19705E31001EA89C /* CurrentSummoner.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BD73DD19705E31001EA89C /* CurrentSummoner.m */; };
+		B5BD73E119705E31001EA89C /* RecentGame.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BD73E019705E31001EA89C /* RecentGame.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +73,12 @@
 		B5ACD23A196F016900AA1774 /* CoreDataHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHandler.m; sourceTree = "<group>"; };
 		B5ACD23D196F01A000AA1774 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		B5ACD23E196F01A000AA1774 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		B5BD73D919705E30001EA89C /* FavoriteSummoner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteSummoner.h; sourceTree = "<group>"; };
+		B5BD73DA19705E30001EA89C /* FavoriteSummoner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteSummoner.m; sourceTree = "<group>"; };
+		B5BD73DC19705E31001EA89C /* CurrentSummoner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentSummoner.h; sourceTree = "<group>"; };
+		B5BD73DD19705E31001EA89C /* CurrentSummoner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentSummoner.m; sourceTree = "<group>"; };
+		B5BD73DF19705E31001EA89C /* RecentGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentGame.h; sourceTree = "<group>"; };
+		B5BD73E019705E31001EA89C /* RecentGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentGame.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,8 +198,12 @@
 		B5ACD22F196EFE9E00AA1774 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				B5ACD239196F016900AA1774 /* CoreDataHandler.h */,
-				B5ACD23A196F016900AA1774 /* CoreDataHandler.m */,
+				B5BD73DC19705E31001EA89C /* CurrentSummoner.h */,
+				B5BD73DD19705E31001EA89C /* CurrentSummoner.m */,
+				B5BD73D919705E30001EA89C /* FavoriteSummoner.h */,
+				B5BD73DA19705E30001EA89C /* FavoriteSummoner.m */,
+				B5BD73DF19705E31001EA89C /* RecentGame.h */,
+				B5BD73E019705E31001EA89C /* RecentGame.m */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -198,6 +211,8 @@
 		B5ACD230196EFEA200AA1774 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B5ACD239196F016900AA1774 /* CoreDataHandler.h */,
+				B5ACD23A196F016900AA1774 /* CoreDataHandler.m */,
 				B5ACD236196EFFC400AA1774 /* LOLLU_DataHandler.h */,
 				B5ACD237196EFFC400AA1774 /* LOLLU_DataHandler.m */,
 			);
@@ -312,10 +327,13 @@
 			files = (
 				B5ACD235196EFF8300AA1774 /* LOLLU_MainViewController.m in Sources */,
 				B5ACD23B196F016900AA1774 /* CoreDataHandler.m in Sources */,
+				B5BD73E119705E31001EA89C /* RecentGame.m in Sources */,
 				5265E1E9196F3BDC0088247D /* LOLLU_SummonerDetailsViewController.m in Sources */,
 				B5ACD208196EFE9000AA1774 /* main.m in Sources */,
 				B5ACD23F196F01A000AA1774 /* Reachability.m in Sources */,
+				B5BD73DB19705E30001EA89C /* FavoriteSummoner.m in Sources */,
 				B5ACD20F196EFE9000AA1774 /* LoL_Lookup.xcdatamodeld in Sources */,
+				B5BD73DE19705E31001EA89C /* CurrentSummoner.m in Sources */,
 				B5ACD20C196EFE9000AA1774 /* LOLLUAppDelegate.m in Sources */,
 				B5ACD238196EFFC400AA1774 /* LOLLU_DataHandler.m in Sources */,
 			);

@@ -11,7 +11,9 @@
 #import "CoreDataHandler.h"
 
 // Data Import
-
+#import "CurrentSummoner.h"
+#import "FavoriteSummoner.h"
+#import "RecentGame.h"
 
 // Utilities Import
 #import "Reachability.h"
@@ -39,35 +41,55 @@
 	Reachability *internetReachable;
 }
 
-- (void)getSummonerInfoByRegion:(NSString *)region andSummonerName:(NSString *)summonerName
+- (BOOL)getSummonerInfoByRegion:(NSString *)region andSummonerName:(NSString *)summonerName
 {
-    NSLog(@"BOOM");
 	id delegate = [[UIApplication sharedApplication]delegate];
 	self.managedObjectContext = [delegate managedObjectContext];
 	
 	coreDataHandler = [[CoreDataHandler alloc] init];
 	
-	NSString *urlString = [NSString stringWithFormat:@"%@%@%@%@?%@", BASE_URL, region, SUMMONER_INFO, summonerName, API_KEY ];
+	NSString *urlString = [NSString stringWithFormat:@"%@%@%@%@?%@", BASE_URL, region, SUMMONER_INFO, summonerName, API_KEY];
 	NSLog(@"URL STRING: %@", urlString);
     NSURL *url = [NSURL URLWithString:urlString];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     [request setHTTPMethod:@"GET"];
-	
-	// Use Main thread to download inventory data
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError)
-    {
-		 if (data.length > 0 && connectionError == nil)
-		 {
-			 NSDictionary *summonerInfo = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
-			 NSLog(@"%@", summonerInfo);
-		 }
-    }];
+	NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil ];
+	NSDictionary *summonerFullDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
+	NSLog(@"%@", summonerFullDict);
+	if ([summonerFullDict count] > 0) {
+		[coreDataHandler clearEntity:@"CurrentSummoner" withFetchRequest:_fetchRequest];
+		NSDictionary *summonerInfo = [summonerFullDict objectForKey:[summonerName lowercaseString]];
+		CurrentSummoner *newSummoner = [NSEntityDescription insertNewObjectForEntityForName:@"CurrentSummoner" inManagedObjectContext:[self managedObjectContext]];
+		newSummoner.summonerID = [summonerInfo objectForKey:@"id"];
+		newSummoner.summonerName = [summonerInfo objectForKey:@"name"];
+		newSummoner.summonerLevel = [summonerInfo objectForKey:@"summonerLevel"];
+		newSummoner.iconID = [summonerInfo objectForKey:@"profileIconId"];
+		[self.managedObjectContext save:nil];
+		_canSegue = TRUE;
+	} else {
+		_canSegue = FALSE;
+	}
+	NSLog(@"CAN IT?: %d", _canSegue);
+	return _canSegue;
 }
 
 - (void)getRecentGamesByRegion:(NSString *)region andSummonerID:(int)summonerID
 {
+	NSLog(@"MADE IT 3");
 	id delegate = [[UIApplication sharedApplication]delegate];
 	self.managedObjectContext = [delegate managedObjectContext];
+	
+	_fetchRequest = [[NSFetchRequest alloc] init];
+	_entity = [NSEntityDescription entityForName:@"CurrentSummoner" inManagedObjectContext:[self managedObjectContext]];
+	_predicate = [NSPredicate predicateWithFormat:@"summonerID = %d", summonerID];
+	
+	[_fetchRequest  setEntity:_entity];
+	[_fetchRequest setPredicate:_predicate];
+	
+	NSError *error;
+	NSArray *fetchedObject = [[self managedObjectContext] executeFetchRequest:_fetchRequest error:&error];
+	
+	CurrentSummoner *currentSummoner = [fetchedObject objectAtIndex:0];
 	
 	coreDataHandler = [[CoreDataHandler alloc] init];
 	
@@ -82,9 +104,26 @@
      {
 		 if (data.length > 0 && connectionError == nil)
 		 {
+			 [coreDataHandler clearEntity:@"RecentGame" withFetchRequest:_fetchRequest];
+			 
 			 NSDictionary *recentGames = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
-			 NSLog(@"%@", recentGames);
+			 NSDictionary *games = [recentGames objectForKey:@"games"];
+			 NSLog(@"GAMES: %@", games);
+			 for (NSDictionary *game in games) {
+				 RecentGame *newGame = [NSEntityDescription insertNewObjectForEntityForName:@"RecentGame" inManagedObjectContext:[self managedObjectContext]];
+				 newGame.gameID = [game objectForKey:@"gameId"];
+				 NSDictionary *gameStats = [game objectForKey:@"stats"];
+				 newGame.minionsKilled = [gameStats objectForKey:@"minionsKilled"];
+				 newGame.numberOfChampionKills = [gameStats objectForKey:@"championsKilled"];
+				 newGame.numberOfDeaths = [gameStats objectForKey:@"numDeaths"];
+				 newGame.turretsKilled = [gameStats objectForKey:@"turretsKilled"];
+				 newGame.wardsPlaced = [gameStats objectForKey:@"wardPlaced"];
+				 newGame.win = [gameStats objectForKey:@"win"];
+				 [currentSummoner addRecentGameObject:newGame];
+				 [newGame setValue:currentSummoner forKeyPath:@"summoner"];
+			 }
 		 }
+		 [self.managedObjectContext save:nil];
      }];
 }
 

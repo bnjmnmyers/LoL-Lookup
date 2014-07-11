@@ -20,8 +20,10 @@
 @property (nonatomic, strong) NSArray *sortDescriptors;
 @property (nonatomic, strong) NSPredicate *predicate;
 
+// Variable Properties
+@property (assign, nonatomic) BOOL canSegue;
 
 // Public Methods
-- (void)getSummonerInfoByRegion:(NSString *)region andSummonerName:(NSString *)summonerName;
+- (BOOL)getSummonerInfoByRegion:(NSString *)region andSummonerName:(NSString *)summonerName;
 - (void)getRecentGamesByRegion:(NSString *)region andSummonerID:(int)summonerID;
 @end

@@ -17,7 +17,9 @@
 @property (weak, nonatomic) IBOutlet UIView *regionPickerCont;
 @property (strong, nonatomic) UIAlertView *alert;
 
+
 // Variable Properties
+@property (assign, nonatomic) BOOL canSegue;
 @property (strong, nonatomic) UITextField *activeField;
 @property (strong, nonatomic) NSArray *regionArray;
 
