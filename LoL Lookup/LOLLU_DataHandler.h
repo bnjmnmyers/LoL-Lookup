@@ -26,4 +26,5 @@
 // Public Methods
 - (BOOL)getSummonerInfoByRegion:(NSString *)region andSummonerName:(NSString *)summonerName;
 - (void)getRecentGamesByRegion:(NSString *)region andSummonerID:(int)summonerID;
+- (void)getCurrentGameInfoByRegion:(NSString *)region andSummonerName:(NSString *)summonerName;
 @end

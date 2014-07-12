@@ -142,4 +142,9 @@
 		[_alert show];
 	}
 }
+
+- (IBAction)getCurrentGameInfo:(id)sender
+{
+    [dataHandler getCurrentGameInfoByRegion:_lblRegion.text andSummonerName:_tfSummonerName.text];
+}
 @end

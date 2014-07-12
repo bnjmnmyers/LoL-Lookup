@@ -27,5 +27,6 @@
 - (IBAction)showRegionPicker:(id)sender;
 - (IBAction)selectRegion:(id)sender;
 - (IBAction)lookupSummoner:(id)sender;
+- (IBAction)getCurrentGameInfo:(id)sender;
 
 @end

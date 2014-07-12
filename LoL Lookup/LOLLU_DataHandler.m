@@ -18,22 +18,33 @@
 // Utilities Import
 #import "Reachability.h"
 
-#define API_KEY @"api_key=d703a62d-6193-4588-9c39-9951d0801736"
+#define LOL_API_KEY @"api_key=d703a62d-6193-4588-9c39-9951d0801736"
+
+#define MASHAPE_API_KEY_TESTING @"NX13aC5xJmmshfYmFrV4MV7j4qrgp1zZ22OjsnYJar1c7BkNeq"
+
+#define MASHAPE_API_KEY_PRODUCTION @"3sHiFRz34ymshXwMZsKYj3LVqT1op1GziAFjsnZ0KLiKL23DI4"
 
 #define BASE_URL @"https://na.api.pvp.net/api/lol/"
+
+#define MASHAPE_BASE_URL @"https://community-league-of-legends.p.mashape.com/api/v1.0/"
 
 #define SUMMONER_INFO @"/v1.4/summoner/by-name/"
 
 #define RECENT_GAMES @"/v1.3/game/by-summoner/"
 
+#define CURRENT_GAME_INFO @"/summoner/retrieveInProgressSpectatorGameInfo/"
+
 // SUMMONER_URL
-//na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/Bizawesome?api_key=d703a62d-6193-4588-9c39-9951d0801736
+// na.api.pvp.net/api/lol/{region}/v1.4/summoner/by-name/{summoner_name}?api_key={api_key}
 
 // ALL_CHAMPIONS
-//na.api.pvp.net/api/lol/static-data/na/v1.2/champion
+// na.api.pvp.net/api/lol/static-data/{region}/v1.2/champion
 
-//RECENT_GAMES
-//na.api.pvp.net/api/lol/na/v1.3/game/by-summoner/24673152/recent
+// RECENT_GAMES
+// na.api.pvp.net/api/lol/{region}/v1.3/game/by-summoner/{summoner_id}/recent
+
+// CURRENT_GAME_INFO
+// community-league-of-legends.p.mashape.com/api/v1.0/{region}/summoner/retrieveInProgressSpectatorGameInfo/{Summonername}
 
 @implementation LOLLU_DataHandler
 {
@@ -48,9 +59,10 @@
 	
 	coreDataHandler = [[CoreDataHandler alloc] init];
 	
-	NSString *urlString = [NSString stringWithFormat:@"%@%@%@%@?%@", BASE_URL, region, SUMMONER_INFO, summonerName, API_KEY];
-	NSLog(@"URL STRING: %@", urlString);
-    NSURL *url = [NSURL URLWithString:urlString];
+	NSString *urlString = [NSString stringWithFormat:@"%@%@%@%@?%@", BASE_URL, region, SUMMONER_INFO, summonerName, LOL_API_KEY];
+    NSString *encodedURLString = [urlString stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
+	NSLog(@"URL STRING: %@", encodedURLString);
+    NSURL *url = [NSURL URLWithString:encodedURLString];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     [request setHTTPMethod:@"GET"];
 	NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil ];
@@ -93,9 +105,10 @@
 	
 	coreDataHandler = [[CoreDataHandler alloc] init];
 	
-	NSString *urlString = [NSString stringWithFormat:@"%@%@%@%d/recent?%@", BASE_URL, region, RECENT_GAMES, summonerID, API_KEY];
-	NSLog(@"URL STRING: %@", urlString);
-    NSURL *url = [NSURL URLWithString:urlString];
+	NSString *urlString = [NSString stringWithFormat:@"%@%@%@%d/recent?%@", BASE_URL, region, RECENT_GAMES, summonerID, LOL_API_KEY];
+    NSString *encodedURLString = [urlString stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
+	NSLog(@"URL STRING: %@", encodedURLString);
+    NSURL *url = [NSURL URLWithString:encodedURLString];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     [request setHTTPMethod:@"GET"];
 	
@@ -125,6 +138,21 @@
 		 }
 		 [self.managedObjectContext save:nil];
      }];
+}
+
+- (void)getCurrentGameInfoByRegion:(NSString *)region andSummonerName:(NSString *)summonerName
+{
+    NSString *urlString = [NSString stringWithFormat:@"%@%@%@%@", MASHAPE_BASE_URL, region, CURRENT_GAME_INFO, summonerName];
+    NSString *encodedURLString = [urlString stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
+    NSDictionary *headers = @{@"X-Mashape-Key": MASHAPE_API_KEY_TESTING};
+    NSURL *url = [NSURL URLWithString:encodedURLString];
+    NSLog(@"%@", url);
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [request setHTTPMethod:@"GET"];
+    [request setAllHTTPHeaderFields:headers];
+	NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+	NSDictionary *currentGameInfoDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
+    NSLog(@"%@", currentGameInfoDict);
 }
 
 @end
